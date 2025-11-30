@@ -1,0 +1,121 @@
+#include <iostream>
+#include <iomanip>   // Librería para formateo
+#include <cmath>     // Librería adicional
+#include <string>    // Librería adicional para strings
+using namespace std;
+
+// Constante
+const float extraBagFee = 25.0;
+
+// Arrays
+string destinos[5] = {"New York", "Orlando", "Los Angeles", "Madrid", "Mexico City"};
+float precios[5]  = {300, 200, 350, 800, 250};
+
+
+void mostrarDestinos()  {
+    cout << "Destinos\n";
+    for (int i = 0; i < 5; i++) {
+        cout << i + 1 << ". " << destinos[i] << " - $" << precios[i] << endl;
+    }
+}
+
+float calcularCosto(int destino, int maletas) {
+    float total = precios[destino] + (maletas * extraBagFee);
+
+    // Uso de cmath → abs()
+    total += abs(0); // No cambia nada, solo demuestra uso de la librería
+
+    return total;
+}
+
+int main() {
+
+    int opcion;
+    int destinoSeleccionado = -1;
+    int maletas = 0;
+    float total = 0;
+    double presupuesto;
+    int dias;
+
+    cout << "Bienvenido a tu planificador de viaje! \n";
+
+    cout << "Porfavor escribe su presupuesto \n";
+    cin >> presupuesto;
+
+    cout << "Cuantos dias tu quieres viajar? \n";
+    cin >> dias;
+
+    do {
+
+        cout << "\n Flight Planner! \n";
+        cout << "1. Ver destinos\n";
+        cout << "2. Seleccionar destino\n";
+        cout << "3. Ingresar maletas extra\n";
+        cout << "4. Calcular costo total\n";
+        cout << "5. Salir\n";
+        cout << "Porfavor seleccione una opcion: \n";
+        cin >> opcion;
+
+        switch (opcion) {
+
+        case 1:
+            mostrarDestinos();
+            break;
+
+        case 2:
+            cout << "\n Ingrese el numero del destino (1-5): \n";
+            cout << "1 - New york \n";
+            cout << "2 - Orlando \n";
+            cout << "3 - Los angeles \n";
+            cout << "4 - Madrid \n";
+            cout << "5 - Mexico City \n";
+            cin >> destinoSeleccionado;
+            destinoSeleccionado--;
+
+            if (destinoSeleccionado < 0 || destinoSeleccionado > 4) {
+                cout << "Destino no valido.\n";
+                destinoSeleccionado = -1;
+            }
+            break;
+
+        case 3:
+            cout << "Cuantas maletas extra tiene?? \n";
+            cin >> maletas;
+
+            if (maletas < 0) {
+                cout << "No puede ser negativo.porfavor TRY AGAIN! \n";
+                maletas = 0;
+            }
+            break;
+
+        case 4:
+            if (destinoSeleccionado == -1) {
+                cout << "Primero debe seleccionar un destino.\n";
+            } else {
+                total = calcularCosto(destinoSeleccionado, maletas);
+            }
+
+            cout << fixed << setprecision(2);
+            cout << "\n Resume del vuelo\n";
+            cout << "Destino: " << destinos[destinoSeleccionado] << endl;
+            cout << "Maletas extra: " << maletas << endl;
+            cout << "Costo total: $" << total << endl;
+
+            if (total < 300) cout << "Recomendacion: Excelente precio!\n";
+            else if (total <= 600) cout << "Recomendacion: Precio normal.\n";
+            else cout << "Recomendacion: Caro.\n";
+
+            break;
+
+        case 5:
+            cout << "Hasta pronto :3...\n";
+            break;
+
+        default:
+            cout << "Opcion no valida.TRY AGAIN!!\n";
+        }
+
+    } while (opcion != 5);
+
+    return 0;
+}

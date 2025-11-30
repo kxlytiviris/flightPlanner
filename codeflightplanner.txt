@@ -1,7 +1,7 @@
 #include <iostream>
-#include <iomanip>   // Librería para formateo
+#include <iomanip>   // Librería para format
 #include <cmath>     // Librería adicional
-#include <string>    // Librería adicional para strings
+#include <string>    // Librería strings
 using namespace std;
 
 // Constante
@@ -119,3 +119,4 @@ int main() {
 
     return 0;
 }
+

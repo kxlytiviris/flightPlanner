@@ -23,7 +23,7 @@ float calcularCosto(int destino, int maletas) {
     float total = precios[destino] + (maletas * extraBagFee);
 
     // Uso de cmath → abs()
-    total += abs(0); // No cambia nada, solo demuestra uso de la librería
+    total += abs(0); 
 
     return total;
 }
@@ -119,6 +119,7 @@ int main() {
 
     return 0;
 }
+
 
 
 

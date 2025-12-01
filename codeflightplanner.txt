@@ -4,7 +4,7 @@
 #include <string>    // Librería strings
 using namespace std;
 
-// Constante
+// Constant
 const float extraBagFee = 25.0;
 
 // Arrays
@@ -101,9 +101,9 @@ int main() {
             cout << "Maletas extra: " << maletas << endl;
             cout << "Costo total: $" << total << endl;
 
-            if (total < 300) cout << "Recomendacion: Excelente precio!\n";
-            else if (total <= 600) cout << "Recomendacion: Precio normal.\n";
-            else cout << "Recomendacion: Caro.\n";
+            if (total < 300){ cout << "Recomendacion: Excelente precio!\n";
+            }else if (total <= 600){ cout << "Recomendacion: Precio normal.\n";
+            }else cout << "Recomendacion: Caro.\n";
 
             break;
 
@@ -119,4 +119,5 @@ int main() {
 
     return 0;
 }
+
 

@@ -37,12 +37,12 @@ int main() {
     double presupuesto;
     int dias;
 
-    cout << "Bienvenido a tu planificador de viaje! \n";
+    cout << "\n Bienvenido a tu planificador de viaje! \n";
 
-    cout << "Porfavor escribe su presupuesto \n";
+    cout << "\n Porfavor escribe su presupuesto \n";
     cin >> presupuesto;
 
-    cout << "Cuantos dias tu quieres viajar? \n";
+    cout << "\n Cuantos dias tu quieres viajar? \n";
     cin >> dias;
 
     do {
@@ -53,7 +53,7 @@ int main() {
         cout << "3. Ingresar maletas extra\n";
         cout << "4. Calcular costo total\n";
         cout << "5. Salir\n";
-        cout << "Porfavor seleccione una opcion: \n";
+        cout << "\n Porfavor seleccione una opcion: \n";
         cin >> opcion;
 
         switch (opcion) {
@@ -108,16 +108,17 @@ int main() {
             break;
 
         case 5:
-            cout << "Hasta pronto :3...\n";
+            cout << "\n Hasta pronto :3...\n";
             break;
 
         default:
-            cout << "Opcion no valida.TRY AGAIN!!\n";
+            cout << "\n Opcion no valida.TRY AGAIN!!\n";
         }
 
     } while (opcion != 5);
 
     return 0;
 }
+
 
 
